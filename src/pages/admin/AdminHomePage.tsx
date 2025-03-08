@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../components/dashboard/Layout'
+import Layout from '../../components/dashboard/Layout';
 
 const AdminHomePage = () => {
   return (

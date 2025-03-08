@@ -15,6 +15,8 @@ import AdminHomePage from "../pages/admin/AdminHomePage";
 
 //MEMBERS
 import MemberHomePage from "../pages/member/MemberHomePage";
+import SettingsPage from '../pages/admin/SettingsPage';
+import AnalyicsPage from '../pages/admin/AnalyicsPage';
 
 const AppRoutes: React.FC = () => {
   const { isAuthenticated, isAdmin, isMember } = useAuth();
@@ -31,6 +33,16 @@ const AppRoutes: React.FC = () => {
       <Route path="/dashboard/member" element={
         <ProtectedRoute>
           <MemberHomePage />
+        </ProtectedRoute>
+      } />
+       <Route path="/dashboard/admin/settings" element={
+        <ProtectedRoute>
+          <SettingsPage />
+        </ProtectedRoute>
+      } />
+        <Route path="/dashboard/admin/analytics" element={
+        <ProtectedRoute>
+          <AnalyicsPage />
         </ProtectedRoute>
       } />
       

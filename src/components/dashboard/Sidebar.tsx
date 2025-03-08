@@ -1,12 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import {
   House,
-  Blocks,
-  Grid2x2Check,
-  UsersRound,
-  ShoppingBasket,
   ChartNoAxesCombined,
-  ShoppingCart,
   Settings,
 } from "lucide-react";
 import storage from "../../constants/storage";
@@ -22,56 +17,26 @@ const menus: MenuItem[] = [
   {
     title: "Home",
     icon: <House size={18} />,
-    href: "/admin/dashboard",
+    href: "/dashboard/admin",
     keyword: "dashboard",
   },
-  {
-    title: "Products",
-    icon: <Blocks size={18} />,
-    href: "/admin/product",
-    keyword: "product",
-  },
-  {
-    title: "Inventory",
-    icon: <Grid2x2Check size={18} />,
-    href: "/admin/inventory",
-    keyword: "inventory",
-  },
-  {
-    title: "Customers",
-    icon: <UsersRound size={18} />,
-    href: "/admin/customer",
-    keyword: "customer",
-  },
-  {
-    title: "Orders",
-    icon: <ShoppingBasket size={18} />,
-    href: "/admin/orders",
-    keyword: "orders",
-  },
+  
   {
     title: "Analytics",
     icon: <ChartNoAxesCombined size={18} />,
-    href: "/admin/analytics",
+    href: "/dashboard/admin/analytics",
     keyword: "analytics",
-  },
-  {
-    title: "Online Store",
-    icon: <ShoppingCart size={18} />,
-    href: "/admin/online-store",
-    keyword: "online-store",
   },
   {
     title: "Settings",
     icon: <Settings size={18} />,
-    href: "/admin/settings",
+    href: "/dashboard/admin/settings",
     keyword: "settings",
   },
 ];
 
 const Sidebar: React.FC = () => {
   const location = useLocation();
-
   const isActive = (keyword: string): boolean => {
     return location.pathname.split("/").includes(keyword);
   };
@@ -86,8 +51,8 @@ const Sidebar: React.FC = () => {
             to={menu.href}
             className={
               isActive(menu.keyword)
-                ? "flex gap-2 items-center p-4 rounded-[8px] cursor-pointer light-bg text-white"
-                : "flex gap-2 items-center px-4 rounded-[8px] cursor-pointer text-white"
+                ? "flex gap-2 items-center p-4 rounded-[8px] cursor-pointer bg-[#F99762] text-white"
+                : "flex gap-2 items-center px-4 rounded-[8px] cursor-pointer text-[#595959]"
             }
           >
             <div className="text-[20px]">{menu.icon}</div>

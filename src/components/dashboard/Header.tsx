@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import storage from "../../constants/storage";
-import { AlignLeft, X, User, Bell } from "lucide-react";
-
+import { User, Bell } from "lucide-react";
 
 const Header: React.FC = () => {
-  const [showMenu, setShowMenu] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
@@ -17,7 +15,10 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -39,7 +40,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between md:px-7 px-4">
           <div className="flex items-center">
             <p className="font-semibold xl:text-[32px] text-[24px] text-black pl-0 capitalize">
-              DECA
+              NPLC Pension
             </p>
           </div>
 
@@ -59,14 +60,14 @@ const Header: React.FC = () => {
               >
                 <span className="relative cursor-pointer flex items-center ml-1 py-[15px] px-[0px] text-black text-[12px] font-medium">
                   <User size={20} />
-                  <p className="text-[16px] text-[#000000] ml-1">SEYI</p>
+                  <p className="text-[16px] text-[#000000] ml-1">Pension</p>
                 </span>
               </button>
 
               {isOpen && (
                 <div className="absolute right-0 mt-4 w-56 bg-white divide-y divide-gray-100 rounded-lg shadow-sm md:w-64">
                   <div className="px-4 py-4 text-sm text-gray-900">
-                    <div className="font-medium">michaelonyedika32@gmail.com</div>
+                    <div className="font-medium">pension@gmail.com</div>
                   </div>
 
                   <div className="py-0 cursor-pointer" onClick={handleLogout}>
@@ -80,8 +81,6 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-
-     
     </>
   );
 };
