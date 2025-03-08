@@ -87,7 +87,7 @@ const Sidebar: React.FC = () => {
             className={
               isActive(menu.keyword)
                 ? "flex gap-2 items-center p-4 rounded-[8px] cursor-pointer light-bg text-white"
-                : "flex gap-2 items-center px-4 rounded-[8px] cursor-pointer darker-bg text-white"
+                : "flex gap-2 items-center px-4 rounded-[8px] cursor-pointer text-white"
             }
           >
             <div className="text-[20px]">{menu.icon}</div>
